@@ -1,4 +1,4 @@
-resource "kubernetes_deployment" "deployment" {
+resource "kubernetes_replication_controller" "replication_controller" {
 
   metadata {
     name = "demo-app"
@@ -6,17 +6,14 @@ resource "kubernetes_deployment" "deployment" {
 
   spec {
     replicas = 3
-
     selector {
-      match_labels {
-        test = "DemoApp"
-      }
+      app = "DemoApp"
     }
 
     template {
       metadata {
         labels {
-          test = "DemoApp"
+          app = "DemoApp"
         }
       }
       spec {
