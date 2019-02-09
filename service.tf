@@ -4,7 +4,7 @@ resource "kubernetes_service" "service" {
   }
   spec {
     selector {
-      app = "DemoApp"
+      app = "${var.app_name}"
     }
     port {
       port = 80

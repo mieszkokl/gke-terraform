@@ -1,19 +1,20 @@
 resource "kubernetes_replication_controller" "replication_controller" {
 
   metadata {
-    name = "demo-app"
+    name = "controller"
   }
 
   spec {
     replicas = 3
+
     selector {
-      app = "DemoApp"
+      app = "${var.app_name}"
     }
 
     template {
       metadata {
         labels {
-          app = "DemoApp"
+          app = "${var.app_name}"
         }
       }
       spec {

@@ -37,3 +37,8 @@ variable "image"
 {
   default = "gcr.io/ferrous-plating-224913/hello-app:v1"
 }
+
+variable "app_name"
+{
+  default = "DemoApp"
+}
