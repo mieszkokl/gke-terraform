@@ -32,3 +32,8 @@ variable "auth_password"
 {
   default = "adoy.rm.99652hcse8fy9"
 }
+
+variable "image"
+{
+  default = "gcr.io/ferrous-plating-224913/hello-app:v1"
+}

@@ -16,8 +16,5 @@ resource "google_container_cluster" "primary" {
       "https://www.googleapis.com/auth/monitoring"
     ]
   }
-  provisioner "local-exec" {
-    command = "gcloud container clusters get-credentials ${google_container_cluster.primary.name} --zone ${google_container_cluster.primary.zone}"
-  }
 }
 
