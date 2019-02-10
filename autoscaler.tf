@@ -7,7 +7,7 @@ resource "kubernetes_horizontal_pod_autoscaler" "autoscaler" {
     min_replicas = 2
     scale_target_ref {
       kind = "ReplicationController"
-      name = "controller"
+      name = "${kubernetes_replication_controller.replication_controller.metadata.0.name}"
     }
   }
 }

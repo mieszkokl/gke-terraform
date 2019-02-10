@@ -5,7 +5,7 @@ resource "kubernetes_replication_controller" "replication_controller" {
   }
 
   spec {
-    replicas = 3
+    replicas = "${var.initial_node_count}"
 
     selector {
       app = "${var.app_name}"
